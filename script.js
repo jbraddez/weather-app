@@ -9,7 +9,7 @@ const weatherIcon = document.querySelector(".weather-icon");
 async function checkWeather(city){
     const response = await fetch(apiURL + city + `&appid=${apikey}`);
 
-    if (response.status == 404){
+    if ((response.status == 404)||(searchBox.value == false)){
         document.querySelector(".error").style.display = "block";
         document.querySelector(".weather").style.display = "none";
     }else{
